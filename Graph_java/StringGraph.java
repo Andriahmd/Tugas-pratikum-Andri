@@ -10,19 +10,19 @@ public class StringGraph {
         adjacencyList = new HashMap<>();
     }
 
-    // Menambahkan node baru ke graf
+    // code untuk Menambahkan node baru ke graf
     public void addNode(String node) {
         adjacencyList.putIfAbsent(node, new ArrayList<>());
     }
 
-    // Menambahkan edge ke graf
+    // code untuk Menambahkan edge ke graf
     public void addEdge(String source, String destination) {
         adjacencyList.get(source).add(destination);
         // Jika graf tidak terarah, tambahkan baris berikut:
         // adjacencyList.get(destination).add(source);
     }
 
-    // Mencetak graf
+    // code untuk Mencetak graf
     public void printGraph() {
         for (String node : adjacencyList.keySet()) {
             System.out.print("Node " + node + " terhubung dengan: ");
@@ -35,17 +35,18 @@ public class StringGraph {
 
     public static void main(String[] args) {
         StringGraph graph = new StringGraph();
+        // code untuk Menambahkan node ke graf
         graph.addNode("A");
         graph.addNode("B");
         graph.addNode("C");
         graph.addNode("D");
-
+          // code untuk Menambahkan edge atau sisi ke graf
         graph.addEdge("A", "B");
         graph.addEdge("A", "C");
         graph.addEdge("B", "C");
         graph.addEdge("C", "A");
         graph.addEdge("C", "D");
-
+        // perintah untuk mencetak graph
         graph.printGraph();
     }
 
