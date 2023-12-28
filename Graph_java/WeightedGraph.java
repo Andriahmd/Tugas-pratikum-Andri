@@ -22,12 +22,12 @@ public class WeightedGraph {
         adjacencyList = new HashMap<>();
     }
 
-    // Menambahkan node baru ke graf
+    // perintah untuk Menambahkan node baru ke graf
     public void addNode(String node) {
         adjacencyList.putIfAbsent(node, new ArrayList<>());
     }
 
-    // Menambahkan edge berbobot ke graf
+    // perintah untuk Menambahkan edge berbobot ke graf
     public void addEdge(String source, String destination, int weight) {
         // Pastikan node sumber ada dalam adjacency list
         adjacencyList.putIfAbsent(source, new ArrayList<>());
@@ -36,7 +36,7 @@ public class WeightedGraph {
         adjacencyList.get(source).add(new Edge(destination, weight));
     }
 
-    // Mencetak graf
+    // code untuk Mencetak graf
     public void printGraph() {
         for (String node : adjacencyList.keySet()) {
             System.out.print("node " + node + " terhubung dengan: ");
@@ -49,16 +49,20 @@ public class WeightedGraph {
 
     public static void main(String[] args) {
         WeightedGraph graph = new WeightedGraph();
+          // code untuk Menambahkan node ke graf
         graph.addNode("A");
         graph.addNode("B");
         graph.addNode("C");
         graph.addNode("D");
 
+        
+        // code untuk Menambahkan edge atau sisi ke graf (yang memiliki bobot)
         graph.addEdge("A", "B", 5);
         graph.addEdge("A", "C", 3);
         graph.addEdge("B", "C", 2);
         graph.addEdge("C", "D", 4);
 
+         // perintah untuk mencetak graph
         graph.printGraph();
     }
 
