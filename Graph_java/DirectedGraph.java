@@ -7,12 +7,12 @@ class DirectedGraph {
         adjacencyList = new HashMap<>();
     }
 
-    // Menambahkan node baru ke graf
+    //  Code untuk Menambahkan node baru ke graf
     public void addNode(String node) {
         adjacencyList.putIfAbsent(node, new ArrayList<>());
     }
 
-    // Menambahkan edge ke graf (hanya satu arah untuk graf berarah)
+    // Code untuk Menambahkan edge ke graf (hanya satu arah untuk graf berarah)
     public void addEdge(String source, String destination) {
         // Pastikan node sumber ada dalam adjacency list
         adjacencyList.putIfAbsent(source, new ArrayList<>());
@@ -38,7 +38,9 @@ class DirectedGraph {
     }
 
     public static void main(String[] args) {
+        // code untuk menambuat objek graph
         DirectedGraph graph = new DirectedGraph();
+        // code yang digunakan untuk menambahkan node dan edge
         graph.addNode("A");
         graph.addNode("B");
         graph.addNode("C");
@@ -49,7 +51,7 @@ class DirectedGraph {
         graph.addEdge("B", "C");
         graph.addEdge("C", "A");
         graph.addEdge("C", "D");
-
+        // perintah untuk mencetak graph
         graph.printGraph();
     }
 }
