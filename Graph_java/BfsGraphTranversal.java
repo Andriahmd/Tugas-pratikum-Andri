@@ -15,7 +15,7 @@ public class BfsGraphTranversal {
     public BfsGraphTranversal() {
         adjacencyList = new HashMap<>();  
 }
- // Menambahkan node baru ke graf
+ // code di bawah digunakan untuk menambahkan node baru
  public void addNode(String node) {
     adjacencyList.putIfAbsent(node, new ArrayList<>());
 }
