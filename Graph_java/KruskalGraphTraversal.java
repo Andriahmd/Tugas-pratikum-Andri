@@ -1,6 +1,7 @@
 import java.util.*;
 
 // Kelas Edge merepresentasikan sisi dalam graf.
+
 // Implementasi Comparable untuk membandingkan berdasrkan bobot 
 class Edge implements Comparable<Edge> {
     String source; // Node sumber sisi
@@ -27,13 +28,13 @@ public class KruskalGraphTraversal {
     private List<Edge> edges = new ArrayList<>(); // code Daftar untuk menyimpan semua sisi.
     private Map<String, String> parent = new HashMap<>(); // Map untuk menyimpan representasi set (Union-Find).
 
-    // code yg digunakan  untuk menambahkan sisi ke graf.
+    // code yg digunakan untuk menambahkan sisi ke graf.
     public void addEdge(String source, String destination, int weight) {
         edges.add(new Edge(source, destination, weight));
     }
 
     // code 'find' untuk Union-Find. Mencari representasi set dari sebuah node.
-    public String find(String node) {   // Jika sebuah node tidak memiliki representasi, ia mewakili dirinya sendiri.
+    public String find(String node) { // Jika sebuah node tidak memiliki representasi, ia mewakili dirinya sendiri.
         if (!parent.containsKey(node)) {
             parent.put(node, node);
         }
@@ -54,7 +55,7 @@ public class KruskalGraphTraversal {
         parent.put(parent1, parent2);
     }
 
-    // code untuk  mencetak Minimum Spanning Tree.
+    // code untuk mencetak Minimum Spanning Tree.
     public void kruskalMST() {
         Collections.sort(edges); // Mengurutkan semua sisi berdasarkan bobot.
 

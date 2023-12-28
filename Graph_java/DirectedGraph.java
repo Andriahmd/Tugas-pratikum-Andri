@@ -7,12 +7,12 @@ class DirectedGraph {
         adjacencyList = new HashMap<>();
     }
 
-    // Menambahkan node baru ke graf
+    //  Code untuk Menambahkan node baru ke graf
     public void addNode(String node) {
         adjacencyList.putIfAbsent(node, new ArrayList<>());
     }
 
-    // Menambahkan edge ke graf (hanya satu arah untuk graf berarah)
+    // Code untuk Menambahkan edge ke graf (hanya satu arah untuk graf berarah)
     public void addEdge(String source, String destination) {
         // Pastikan node sumber ada dalam adjacency list
         adjacencyList.putIfAbsent(source, new ArrayList<>());
