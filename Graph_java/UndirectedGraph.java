@@ -11,12 +11,12 @@ public class UndirectedGraph {
         adjacencyList = new HashMap<>();
     }
 
-    // Menambahkan node baru ke graf
+    // code untuk Menambahkan node baru ke graf
     public void addNode(String node) {
         adjacencyList.putIfAbsent(node, new ArrayList<>());
     }
 
-    // Menambahkan edge ke graf (tambahkan di kedua arah untuk graf tidak terarah)
+    // code untuk Menambahkan edge ke graf (tambahkan di kedua arah untuk graf tidak terarah)
     public void addEdge(String source, String destination) {
         // Pastikan kedua node ada dalam adjacency list
         adjacencyList.putIfAbsent(source, new ArrayList<>());
@@ -27,12 +27,12 @@ public class UndirectedGraph {
         adjacencyList.get(destination).add(source);
     }
 
-    // Mendapatkan daftar tetangga dari node
+    // code untuk Mendapatkan daftar Neighbors dari node
     public List<String> getNeighbors(String node) {
         return adjacencyList.getOrDefault(node, Collections.emptyList());
     }
 
-    // Mencetak graf
+    // code untuk Mencetak graf
     public void printGraph() {
         for (String node : adjacencyList.keySet()) {
             System.out.print("Node " + node + " terhubung dengan: ");
@@ -45,16 +45,19 @@ public class UndirectedGraph {
 
     public static void main(String[] args) {
         UndirectedGraph graph = new UndirectedGraph();
+        // code untuk Menambahkan node ke graf
         graph.addNode("A");
         graph.addNode("B");
         graph.addNode("C");
         graph.addNode("D");
 
+        // code untuk Menambahkan edge atau sisi ke graf
         graph.addEdge("A", "B");
         graph.addEdge("A", "C");
         graph.addEdge("B", "C");
         graph.addEdge("C", "D");
 
+         // perintah untuk mencetak graph
         graph.printGraph();
     }
 }
