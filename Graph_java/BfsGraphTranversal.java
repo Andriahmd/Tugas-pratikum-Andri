@@ -24,17 +24,6 @@ public class BfsGraphTranversal {
  public void addNode(String node) {
     adjacencyList.putIfAbsent(node, new ArrayList<>());
 }
-
-        adjacencyList = new HashMap<>();
-    }
-
-
-    // Menambahkan node baru ke graf
-    public void addNode(String node) {
-        this.node = node;
-        adjacencyList.putIfAbsent(node, new ArrayList<>());
-    }
-
     // Menambahkan edge yang memiliki berbobot ke graf
     public void addEdge(String source, String destination, int weight) {
         // Pastikan node sumber ada dalam adjacency list

@@ -1,16 +1,11 @@
 package hash_tabel;
 
 public class DirectHash {
-    
-    // Array untuk menyimpan data. Setiap indeks dalam array merepresentasikan kunci (key),
-    // dan elemen pada indeks tersebut adalah nilai (value).
+   
     private int[] table;
 
-    /**
-     * Konstruktor DirectHash
-     * @param size Ukuran dari array hash table
-     * Menginisialisasi array table dengan ukuran yang ditentukan oleh parameter size.
-     */
+    //   Menginisialisasi array table dengan ukuran yang ditentukan oleh parameter size.
+     
     public DirectHash(int size) {
         table = new int[size];
     }
