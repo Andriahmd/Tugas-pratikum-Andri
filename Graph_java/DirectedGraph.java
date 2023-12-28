@@ -38,7 +38,9 @@ class DirectedGraph {
     }
 
     public static void main(String[] args) {
+        // code untuk menambuat objek graph
         DirectedGraph graph = new DirectedGraph();
+        // code yang digunakan untuk menambahkan node dan edge
         graph.addNode("A");
         graph.addNode("B");
         graph.addNode("C");
@@ -49,7 +51,7 @@ class DirectedGraph {
         graph.addEdge("B", "C");
         graph.addEdge("C", "A");
         graph.addEdge("C", "D");
-
+        // perintah untuk mencetak graph
         graph.printGraph();
     }
 }

@@ -1,5 +1,5 @@
 import java.util.*;
-// code kelas yang di gunakan untuk mempersentasikan sisi (edge) dalam suatu graf
+// kelas yang di gunakan untuk mempersentasikan sisi (edge) dalam suatu graf
 class Sisi {
     String destination; //suatu node tujuan yg terhubung dgn sisi
     int weight; // bobot (jarak ) dari sisi

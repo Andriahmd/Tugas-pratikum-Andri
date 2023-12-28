@@ -1,22 +1,26 @@
 import java.util.*;
 
+// Kelas untuk merepresentasikan edge dalam graf
 class Edge implements Comparable<Edge> {
     String source;
     String destination;
     int weight;
-
+    // code untuk inisialisasi edge dengan source, destination, dan weight
     public Edge(String source, String destination, int weight) {
         this.source = source;
         this.destination = destination;
         this.weight = weight;
     }
 
+    
+    // code untuk membandingkan edge berdasarkan weight
     @Override
     public int compareTo(Edge other) {
         return Integer.compare(this.weight, other.weight);
     }
 }
 
+// Kelas utama untuk mencari PrimGraphTraversal
 public class PrimGraphTraversal {
 
     private Map<String, List<Edge>> adjacencyList;
@@ -83,7 +87,7 @@ public class PrimGraphTraversal {
     public static void main(String[] args) {
         PrimGraphTraversal graph = new PrimGraphTraversal();
 
-        // Menambahkan node ke graph
+        // code untuk Menambahkan node ke graph
         graph.addNode("A");
         graph.addNode("B");
         graph.addNode("C");
@@ -99,7 +103,7 @@ public class PrimGraphTraversal {
         graph.addEdge("C", "E", 5);
         graph.addEdge("D", "E", 3);
         
-        // menjalankan algoritma prim dengan node random A
+        // code untuk mencari primGraph dengan node random A
         graph.primMST("A");
     }
 

@@ -1,13 +1,13 @@
 import java.util.*;
 
 // Kelas Edge merepresentasikan sisi dalam graf.
-// Implementasi Comparable untuk memungkinkan pembandingan berdasarkan bobot.
+// Implementasi Comparable untuk membandingkan berdasrkan bobot 
 class Edge implements Comparable<Edge> {
     String source; // Node sumber sisi
     String destination; // Node tujuan sisi
     int weight; // Bobot sisi
 
-    // Konstruktor untuk membuat sisi baru
+    // code untuk membuat sisi baru
     public Edge(String source, String destination, int weight) {
         this.source = source;
         this.destination = destination;
@@ -22,20 +22,18 @@ class Edge implements Comparable<Edge> {
     }
 }
 
-// Kelas KruskalGraphTraversal mengimplementasikan algoritma Kruskal untuk
-// mencari Minimum Spanning Tree.
+// Kelas KruskalGraphTraversal untuk mencari Minimum Spanning Tree.
 public class KruskalGraphTraversal {
-    private List<Edge> edges = new ArrayList<>(); // Daftar untuk menyimpan semua sisi.
+    private List<Edge> edges = new ArrayList<>(); // code Daftar untuk menyimpan semua sisi.
     private Map<String, String> parent = new HashMap<>(); // Map untuk menyimpan representasi set (Union-Find).
 
-    // Metode untuk menambahkan sisi ke graf.
+    // code yg digunakan  untuk menambahkan sisi ke graf.
     public void addEdge(String source, String destination, int weight) {
         edges.add(new Edge(source, destination, weight));
     }
 
-    // Metode 'find' untuk Union-Find. Mencari representasi set dari sebuah node.
-    // Jika sebuah node tidak memiliki representasi, ia mewakili dirinya sendiri.
-    public String find(String node) {
+    // code 'find' untuk Union-Find. Mencari representasi set dari sebuah node.
+    public String find(String node) {   // Jika sebuah node tidak memiliki representasi, ia mewakili dirinya sendiri.
         if (!parent.containsKey(node)) {
             parent.put(node, node);
         }
@@ -49,15 +47,14 @@ public class KruskalGraphTraversal {
         return parent.get(node);
     }
 
-    // Metode 'union' untuk menggabungkan dua set dalam Union-Find.
+    // code 'union' untuk menggabungkan dua set dalam Union-Find.
     public void union(String node1, String node2) {
         String parent1 = find(node1);
         String parent2 = find(node2);
         parent.put(parent1, parent2);
     }
 
-    // Metode untuk menjalankan algoritma Kruskal dan mencetak Minimum Spanning
-    // Tree.
+    // code untuk  mencetak Minimum Spanning Tree.
     public void kruskalMST() {
         Collections.sort(edges); // Mengurutkan semua sisi berdasarkan bobot.
 
@@ -78,7 +75,6 @@ public class KruskalGraphTraversal {
         System.out.println("Total bobot MST: " + mstWeight);
     }
 
-    // Metode main untuk menjalankan algoritma.
     public static void main(String[] args) {
         KruskalGraphTraversal graph = new KruskalGraphTraversal();
 
@@ -91,7 +87,7 @@ public class KruskalGraphTraversal {
         graph.addEdge("C", "E", 5);
         graph.addEdge("D", "E", 3);
 
-        // Menjalankan algoritma Kruskal.
+        // code untuk memangil graph kruskal
         graph.kruskalMST();
     }
 
