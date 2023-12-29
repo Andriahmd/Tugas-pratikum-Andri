@@ -14,8 +14,7 @@ class Edges {
 // Sebuah code yang di gunakan untuk mendeklasikan kelas BfsGraphTraversal
 public class BfsGraphTranversal {
     private Map<String, List<Edges>> adjacencyList;
-    private String node;
-
+   
     public BfsGraphTranversal() {
 
         adjacencyList = new HashMap<>();  
@@ -64,20 +63,22 @@ public class BfsGraphTranversal {
 
     public static void main(String[] args) {
         BfsGraphTranversal graph = new BfsGraphTranversal();
+        // perintah untuk menambahkan node 
         graph.addNode("A");
         graph.addNode("B");
         graph.addNode("C");
         graph.addNode("D");
 
+         // perintah untuk Menambahkan edge atau sisi ke graf
         graph.addEdge("A", "B", 5);
         graph.addEdge("A", "C", 3);
         graph.addEdge("B", "C", 2);
         graph.addEdge("C", "D", 4);
 
+         // printah memanggil code bfsTraversal untuk melakukan BFS traversal dari node "A".
         graph.bfsTraversal("A");
-        // code main yang membuat objek graf, menambahkan node, menambahkan tepi, dan
-        // kemudian memanggil code bfsTraversal untuk melakukan BFS traversal dari
-        // node "A".
+        
+       
     }
 
 }

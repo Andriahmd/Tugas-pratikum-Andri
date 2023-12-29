@@ -45,13 +45,13 @@ public class UndirectedGraph {
 
     public static void main(String[] args) {
         UndirectedGraph graph = new UndirectedGraph();
-        // code untuk Menambahkan node ke graf
+        // code untuk Menambahkan node ke graph
         graph.addNode("A");
         graph.addNode("B");
         graph.addNode("C");
         graph.addNode("D");
 
-        // code untuk Menambahkan edge atau sisi ke graf
+        // code untuk Menambahkan edge atau sisi ke graph
         graph.addEdge("A", "B");
         graph.addEdge("A", "C");
         graph.addEdge("B", "C");
