@@ -1,9 +1,7 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- * Kelas Node digunakan untuk merepresentasikan sebuah node dalam Binary Search Tree (BST).
- */
+//class node
 class Node {
     int data;
     Node left, right;
@@ -14,13 +12,12 @@ class Node {
     }
 }
 
-/**
- * Kelas BinarySearchTree menyediakan implementasi untuk Binary Search Tree.
- */
+//clas utama untuk algoritma yang di perlukan
 public class TraversalBst {
 
     Node root;
 
+    //perintah untuk menabah node
     public Node insert(Node root, int data) {
         if (root == null) {
             root = new Node(data);
@@ -36,9 +33,7 @@ public class TraversalBst {
         return root;
     }
 
-    /**
-     * Melakukan traversal in-order pada BST.
-     */
+   //perintah untuk menjalankan metode in odrder
     public void inOrder(Node root) {
         if (root != null) {
             inOrder(root.left);
@@ -47,9 +42,7 @@ public class TraversalBst {
         }
     }
 
-    /**
-     * Melakukan traversal post-order pada BST.
-     */
+    //perintah untuk menjalankan metode post order
     public void postOrder(Node root) {
         if (root != null) {
             postOrder(root.left);
@@ -58,15 +51,14 @@ public class TraversalBst {
         }
     }
 
-    /**
-     * Melakukan traversal level-order (Breadth-First Search) pada BST.
-     */
+    //perintah untuk menjalankan metode levelorder
     public void levelOrder(Node root) {
         if (root == null) return;
 
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
 
+        // kondisi untuk memerika apakah queue nya kosong ap tidak
         while (!queue.isEmpty()) {
             Node current = queue.poll();
             System.out.print(current.data + " ");
@@ -76,10 +68,12 @@ public class TraversalBst {
         }
     }
 
+
+    
     public static void main(String[] args) {
         TraversalBst bst = new TraversalBst();
         
-        // Membuat struktur BST
+        //  perintah untuk membuat struktur BST
         bst.root = bst.insert(bst.root, 50);
         bst.insert(bst.root, 30);
         bst.insert(bst.root, 70);

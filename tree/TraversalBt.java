@@ -1,9 +1,7 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
- * Kelas Node untuk merepresentasikan sebuah node dalam Binary Tree.
- */
+//class node 
 class Node {
     int data;
     Node left, right;
@@ -14,16 +12,12 @@ class Node {
     }
 }
 
-/**
- * Kelas BinaryTree untuk operasi-operasi pada Binary Tree.
- */
+//class utama untuk algoritma traversalbinaryseacrh
 public class TraversalBt {
 
     Node root;
 
-    /**
-     * Melakukan traversal in-order pada Binary Tree.
-     */
+   //perintah untuk menjalankan metode untuk traversal in order
     public static void inOrder(Node node) {
         if (node != null) {
             inOrder(node.left);
@@ -32,9 +26,7 @@ public class TraversalBt {
         }
     }
 
-    /**
-     * Melakukan traversal post-order pada Binary Tree.
-     */
+    //perintah untuk menjalankan metode untuk post order
     public static void postOrder(Node node) {
         if (node != null) {
             postOrder(node.left);
@@ -43,12 +35,10 @@ public class TraversalBt {
         }
     }
 
-    /**
-     * Melakukan traversal level-order pada Binary Tree.
-     */
+    
+    //perintah untuk menjalankan metode unutuk level order
     public static void levelOrder(Node root) {
-        if (root == null)
-            return;
+        if (root == null) return;
 
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
@@ -57,17 +47,15 @@ public class TraversalBt {
             Node current = queue.poll();
             System.out.print(current.data + " ");
 
-            if (current.left != null)
-                queue.add(current.left);
-            if (current.right != null)
-                queue.add(current.right);
+            if (current.left != null) queue.add(current.left);
+            if (current.right != null) queue.add(current.right);
         }
     }
 
     public static void main(String[] args) {
         TraversalBt tree = new TraversalBt();
 
-        // Membuat nodes
+        // perintah untuk Membuat nodes
         tree.root = new Node(1);
         tree.root.left = new Node(2);
         tree.root.right = new Node(3);
@@ -79,17 +67,17 @@ public class TraversalBt {
         tree.root.left.right.left = new Node(9);
         tree.root.right.left.left = new Node(10);
 
-        // Menampilkan traversal in-order
+        // perintah untuk menampilkan traversal in-order
         System.out.println("In-Order traversal:");
         inOrder(tree.root);
         System.out.println();
 
-        // Menampilkan traversal post-order
+        // perintah untuk menampilkan traversal post-order
         System.out.println("Post-Order traversal:");
         postOrder(tree.root);
         System.out.println();
 
-        // Menampilkan traversal level-order
+        // perintah untuk menampilkan traversal level-order
         System.out.println("Level-Order traversal:");
         levelOrder(tree.root);
         System.out.println();

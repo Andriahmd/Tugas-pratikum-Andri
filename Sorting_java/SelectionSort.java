@@ -1,11 +1,14 @@
 package Sorting_java;
 
 public class SelectionSort {
- 
+
+    //  perintah untuk menjalankan program 
     public static void main(String[] args) {
-        int [] arr= {22,2,90,25,20,30,6,3};
+        int [] arr= {22,2,90,25,20,30,6,3}; // Membuat array dengan nilai awal
+        // perintah untuk Memanggil metode SelectionSort untuk mengurutkan array
         SelectionSort(arr);
         System.out.println("Data array yang sudah di selection sort ");
+         // Loop untuk mencetak elemen array setelah diurutkan
         for (int i : arr){     
             System.out.println(i +"");
         }
@@ -22,7 +25,7 @@ public class SelectionSort {
                     MinIdx = j;
                 }
             }
-
+            // Perintah untuk  menukar posisi elemen terkecil dengan elemen di posisi i
             int Nilai = arr[MinIdx];
             arr[MinIdx] = arr[i];
             arr[i] = Nilai;

@@ -3,52 +3,39 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-/**
- * Kelas yang merepresentasikan sebuah node pada pohon biner.
- */
+//class node
 class Node {
-    String value;
-    Node left;
-    Node right;
+    String value;// nilai yang akan di simpan di node
+    Node left; // node kiri
+    Node right; //node kanan
 
-    /**
-     * Konstruktor untuk kelas Node.
-     * 
-     * @param value Nilai dari node.
-     */
-    public Node(String value) {
+    //konstruktor  untuk membuat node
+    public Node(String value) { 
         this.value = value;
         left = null;
         right = null;
     }
 }
 
-/**
- * Kelas yang merepresentasikan sebuah pohon biner.
- */
+//class stringbst
 class StringBst {
     Node root;
 
-    /**
-     * Konstruktor default, menginisialisasi root menjadi null.
-     */
+    //konstruktor strinbst
     public StringBst() {
         root = null;
     }
 
-    /**
-     * Menyisipkan sebuah node baru ke pohon biner.
-     * 
-     * @param root  Node root saat ini.
-     * @param value Nilai yang akan disisipkan.
-     * @return Node root yang baru.
-     */
+   
+
+     // perintah untuk menjalankan metode menambah / menyisipkan node baru ke tree
     public Node insert(Node root, String value) {
         if (root == null) {
-            root = new Node(value);
-            return root;
+            root = new Node(value); //node saat ini
+            return root; 
         }
 
+        
         if (value.compareTo(root.value) < 0) {
             root.left = insert(root.left, value);
         } else if (value.compareTo(root.value) > 0) {
@@ -58,57 +45,45 @@ class StringBst {
         return root;
     }
 
-    /**
-     * Melakukan traversal pre-order pada pohon biner.
-     * 
-     * @param root Node root saat ini.
-     */
-    public void preorder(Node root) {
+  
+    // perintah untuk menjalakan metode preorder
+    public void preorder(Node root) {  
         if (root != null) {
             System.out.print(root.value + " ");
-            preorder(root.left);
+            preorder(root.left);   //kunjungi root,kiri dan kanan
             preorder(root.right);
         }
     }
 
-    /**
-     * Melakukan traversal in-order pada pohon biner.
-     * 
-     * @param root Node root saat ini.
-     */
+   
+    //perintah untuk menjalakan metode inorder
     public void inorder(Node root) {
         if (root != null) {
-            inorder(root.left);
+            inorder(root.left);  //kunjungi kiri,root,kanan//
             System.out.print(root.value + " ");
             inorder(root.right);
         }
     }
 
-    /**
-     * Melakukan traversal post-order pada pohon biner.
-     * 
-     * @param root Node root saat ini.
-     */
+    
+    //perintah untuk menjalakan metode postirder
     public void postorder(Node root) {
         if (root != null) {
-            postorder(root.left);
+            postorder(root.left); //kunjungi kiri,kanan,root
             postorder(root.right);
             System.out.print(root.value + " ");
         }
     }
 
-    /**
-     * Melakukan traversal level-order pada pohon biner.
-     * 
-     * @param root Node root saat ini.
-     */
+   
+    // perintah untuk menjalakan metode level order
     public void levelOrder(Node root) {
-        if (root == null)
-            return;
+        if (root == null) return;
 
+        // kunjungi level per level
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
-
+        
         while (!queue.isEmpty()) {
             Node current = queue.poll();
             System.out.print(current.value + " ");
@@ -122,23 +97,17 @@ class StringBst {
             }
         }
 
+        
     }
 
-    /**
-     * Mencetak pohon biner dalam bentuk struktur tree folder.
-     * 
-     * @param node   Node awal (biasanya root).
-     * @param prefix Prefix untuk baris saat ini.
-     * @param isTail Apakah node ini adalah anak terakhir dari parentnya.
-     */
+   
+     // Metode untuk mencetak struktur pohon secara visual
     public void printTree(Node node, String prefix, boolean isTail) {
         if (node != null) {
             System.out.println(prefix + (isTail ? "└── " : "├── ") + node.value);
             List<Node> children = new ArrayList<>();
-            if (node.left != null)
-                children.add(node.left);
-            if (node.right != null)
-                children.add(node.right);
+            if (node.left != null) children.add(node.left);
+            if (node.right != null) children.add(node.right);
             for (int i = 0; i < children.size() - 1; i++) {
                 printTree(children.get(i), prefix + (isTail ? "    " : "│   "), false);
             }
@@ -148,13 +117,11 @@ class StringBst {
         }
     }
 
-    /**
-     * Metode main untuk mengeksekusi kode.
-     * 
-     * @param args Argumen dari baris perintah.
-     */
+    
     public static void main(String[] args) {
-        StringBst tree = new StringBst();
+        StringBst tree = new StringBst(); // objek tree
+
+        //perintah untuk menabahkan nilai ke tree
         tree.root = tree.insert(tree.root, "Mango");
         tree.insert(tree.root, "Apple");
         tree.insert(tree.root, "Orange");
@@ -163,9 +130,11 @@ class StringBst {
         tree.insert(tree.root, "Pineapple");
         tree.insert(tree.root, "Peach");
 
+        // perintah untuk mencetak struker tree
         System.out.println("Struktur pohon biner:");
         tree.printTree(tree.root, "", true);
 
+        //mecetak tree
         System.out.println("Traversal pre-order:");
         tree.preorder(tree.root);
 

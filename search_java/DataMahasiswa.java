@@ -2,9 +2,9 @@ package search_java;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- * Kelas untuk merepresentasikan objek Mahasiswa.
- */
+
+//  Kelas untuk merepresentasikan objek Mahasiswa.
+
 class Mahasiswa {
     private String nim;      // NIM mahasiswa
     private String nama;     // Nama mahasiswa
@@ -17,23 +17,24 @@ class Mahasiswa {
      * @param nama    Nama mahasiswa
      * @param jurusan Jurusan mahasiswa
      */
+
     public Mahasiswa(String nim, String nama, String jurusan) {
         this.nim = nim;
         this.nama = nama;
         this.jurusan = jurusan;
     }
 
-    // Getter untuk NIM
+    // perintah untuk mendapatkan Nim mahasiswa 
     public String getNim() {
         return nim;
     }
 
-    // Getter untuk nama
+    // perintah untuk mendapatkan nama mahassiwa
     public String getNama() {
         return nama;
     }
 
-    // Getter untuk jurusan
+    // perintah untuk mendapatkan jurusan mahassiwa
     public String getJurusan() {
         return jurusan;
     }
@@ -45,18 +46,11 @@ class Mahasiswa {
     }
 }
 
-/**
- * Kelas utama untuk mengelola data mahasiswa.
- */
-public class DataMahasiswa {
 
-    /**
-     * Sequential Search untuk mencari mahasiswa berdasarkan NIM.
-     * 
-     * @param list      Daftar mahasiswa
-     * @param nimTarget NIM yang dicari
-     * @return Indeks mahasiswa jika ditemukan, atau -1 jika tidak ditemukan
-     */
+//Kelas utama untuk mengelola data mahasiswa.
+public class DataMahasiswa {
+    // metode untuk melakukan pencarian data mahasiswa dengan algoritma squential seacrh menggunakan nim
+   
     public static int sequentialSearch(ArrayList<Mahasiswa> list, String nimTarget) {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getNim().equals(nimTarget)) {
@@ -66,14 +60,7 @@ public class DataMahasiswa {
         return -1;
     }
 
-    /**
-     * Binary Search untuk mencari mahasiswa berdasarkan NIM.
-     * (Mengasumsikan daftar mahasiswa sudah diurutkan berdasarkan NIM)
-     * 
-     * @param list      Daftar mahasiswa
-     * @param nimTarget NIM yang dicari
-     * @return Indeks mahasiswa jika ditemukan, atau -1 jika tidak ditemukan
-     */
+    // perintah untuk melakukan pencarian data mahasiswa dengan algoritma binary seacrh menggunakan nim
     public static int binarySearch(ArrayList<Mahasiswa> list, String nimTarget) {
         int low = 0;
         int high = list.size() - 1;
@@ -90,14 +77,7 @@ public class DataMahasiswa {
         return -1;
     }
 
-    /**
-     * Interpolation Search untuk mencari mahasiswa berdasarkan NIM.
-     * (Mengasumsikan daftar mahasiswa sudah diurutkan berdasarkan NIM)
-     * 
-     * @param list      Daftar mahasiswa
-     * @param nimTarget NIM yang dicari
-     * @return Indeks mahasiswa jika ditemukan, atau -1 jika tidak ditemukan
-     */
+    // perintah untuk melakukan pencarian data mahasiswa dengan algoritma interpolation seacrh menggunakan nim
     public static int interpolationSearch(ArrayList<Mahasiswa> list, String nimTarget) {
         int low = 0;
         int high = list.size() - 1;
@@ -115,28 +95,14 @@ public class DataMahasiswa {
         return -1;
     }
 
-    /**
-     * Menampilkan header untuk tabel data mahasiswa.
-     */
+// perintah untuk menampilkan data mahasiswa
     public static void tampilkanHeaderTabel() {
         System.out.printf("+--------------+---------------------+--------------------+%n");
         System.out.printf("|     NIM      |         Nama        |      Jurusan       |%n");
         System.out.printf("+--------------+---------------------+--------------------+%n");
     }
 
-    /**
-     * Metode utama untuk menjalankan aplikasi manajemen data mahasiswa.
-     * Pengguna dapat:
-     * 1. Menambahkan data mahasiswa
-     * 2. Menampilkan semua data mahasiswa dalam bentuk tabel
-     * 3. Menghapus data mahasiswa berdasarkan indeks
-     * 4. Mencari mahasiswa berdasarkan NIM menggunakan Sequential Search
-     * 5. Mencari mahasiswa berdasarkan NIM menggunakan Binary Search
-     * 6. Mencari mahasiswa berdasarkan NIM menggunakan Interpolation Search
-     * 7. Keluar dari aplikasi
-     * 
-     * @param args Argumen baris perintah (tidak digunakan)
-     */
+     //meetode utama untuk menjalakan program data mahasiswa berisi menu dan logika yang akan menjalankan program
     public static void main(String[] args) {
         // Membuat objek scanner untuk menerima input dari pengguna
         Scanner scanner = new Scanner(System.in);

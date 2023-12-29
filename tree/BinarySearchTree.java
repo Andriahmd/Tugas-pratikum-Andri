@@ -1,36 +1,20 @@
-/**
- * Kelas Node digunakan untuk merepresentasikan sebuah node dalam Binary Search Tree (BST).
- * Setiap node memiliki sebuah data serta referensi ke anak kiri dan anak kanan.
- */
+// class node
 class Node {
     int data;
     Node left, right;
 
-    /**
-     * Konstruktor Node untuk menciptakan sebuah node baru.
-     *
-     * @param data Data yang akan disimpan dalam node.
-     */
+    //konstruktor untuk menambah node baru 
     public Node(int data) {
         this.data = data;
         left = right = null;
     }
 }
 
-/**
- * Kelas BinarySearchTree menyediakan implementasi untuk Binary Search Tree.
- */
+// perintah untuk menjalankan BinarySearchTree
 public class BinarySearchTree {
 
     Node root;  // Node akar dari BST
 
-    /**
-     * Metode untuk menambahkan node baru ke dalam BST.
-     *
-     * @param root Node akar dari sub-pohon tempat node baru akan disisipkan.
-     * @param data Data untuk node baru.
-     * @return Node akar dari sub-pohon yang sudah diperbarui.
-     */
     public Node insert(Node root, int data) {
         // Jika sub-pohon kosong, ciptakan node baru sebagai akar dari sub-pohon
         if (root == null) {
@@ -48,9 +32,7 @@ public class BinarySearchTree {
         return root;
     }
 
-    /**
-     * Fungsi untuk mencetak struktur pohon dalam bentuk folder.
-     */
+    // perintah untuk menceetak tree secara terstruktur     
     public void printTree(Node node, String indent, boolean last) {
         if (node != null) {
             System.out.println(indent + "+-- " + node.data);
@@ -60,11 +42,7 @@ public class BinarySearchTree {
         }
     }
 
-    /**
-     * Metode utama untuk menjalankan program.
-     *
-     * @param args Argumen dari command line (tidak digunakan).
-     */
+    
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();  // Membuat objek BST
 
@@ -74,6 +52,7 @@ public class BinarySearchTree {
         //     30     70
         //    /  \   /  \
         //   10  35 65   80
+        // perintah untuk menambahkan data 
         bst.root = bst.insert(bst.root, 50);
         bst.insert(bst.root, 30);
         bst.insert(bst.root, 70);
